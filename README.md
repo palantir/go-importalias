@@ -1,14 +1,11 @@
-importalias
-===========
-`importalias` is a check that verifies that import aliases in a project are used consistently. It verifies that, if a
-given package is imported using an alias, then all aliases for that import are consistent across the project.
+go-importalias
+==============
+go-importalias is a check that verifies that import aliases in a project are consistent across packages. It verifies
+that, if a given package is imported using an alias, then all aliases for that import are consistent across the provided
+packages.
 
 Usage
 -----
-`importalias` uses its current working directory as the project root. If no arguments are provided, it is invoked on all
-of the go packages it can find in the current working directory and its subdirectories. If arguments are provided, they
-are interpreted as packages relative to the working directory, and only the specified packages will be checked.
-
 By default, the output of the check is standard Go check output format. The program operates as follows:
 
 * Finds all imports and all aliases that are used for imports.
