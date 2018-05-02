@@ -15,13 +15,14 @@
 package cmd
 
 import (
+	"github.com/palantir/pkg/cobracli"
 	"github.com/spf13/cobra"
 
 	"github.com/palantir/go-importalias/importalias"
 )
 
 var (
-	RootCmd = &cobra.Command{
+	rootCmd = &cobra.Command{
 		Use:   "importalias [flags] [packages]",
 		Short: "verifies that import aliases are consistent across files and packages",
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -32,6 +33,10 @@ var (
 	verboseFlagVal bool
 )
 
+func Execute() int {
+	return cobracli.ExecuteWithDefaultParams(rootCmd)
+}
+
 func init() {
-	RootCmd.Flags().BoolVarP(&verboseFlagVal, "verbose", "v", false, "print verbose analysis of all imports that have multiple aliases")
+	rootCmd.Flags().BoolVarP(&verboseFlagVal, "verbose", "v", false, "print verbose analysis of all imports that have multiple aliases")
 }
