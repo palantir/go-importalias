@@ -1,3 +1,7 @@
+<p align="right">
+<a href="https://autorelease.general.dmz.palantir.tech/palantir/go-importalias"><img src="https://img.shields.io/badge/Perform%20an-Autorelease-success.svg" alt="Autorelease"></a>
+</p>
+
 go-importalias
 ==============
 go-importalias is a check that verifies that import aliases in a project are consistent across packages. It verifies that, if a given package is imported using an alias, then all aliases for that import are consistent across the provided packages.
