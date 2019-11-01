@@ -61,7 +61,7 @@ func Run(pkgPaths []string, verbose bool, w io.Writer) error {
 
 	if verbose {
 		for _, k := range pkgsWithMultipleAliases {
-			fmt.Fprintf(w, "%s is imported using multiple different aliases:\n", k)
+			_, _ = fmt.Fprintf(w, "%s is imported using multiple different aliases:\n", k)
 			for _, currAliasInfo := range importsToAliases[k] {
 				var files []string
 				for k, v := range currAliasInfo.Occurrences {
@@ -75,7 +75,7 @@ func Run(pkgPaths []string, verbose bool, w io.Writer) error {
 				} else {
 					numFilesMsg = fmt.Sprintf("(%d files)", len(currAliasInfo.Occurrences))
 				}
-				fmt.Fprintf(w, "\t%s %s:\n\t\t%s\n", currAliasInfo.Alias, numFilesMsg, strings.Join(files, "\n\t\t"))
+				_, _ = fmt.Fprintf(w, "\t%s %s:\n\t\t%s\n", currAliasInfo.Alias, numFilesMsg, strings.Join(files, "\n\t\t"))
 			}
 		}
 	} else {
@@ -95,7 +95,7 @@ func Run(pkgPaths []string, verbose bool, w io.Writer) error {
 				if status.OK {
 					continue
 				}
-				fmt.Fprintf(w, "%s:%d:%d: uses alias %q to import package %s. %s.\n", file, alias.Pos.Line, alias.Pos.Column, alias.Alias, alias.ImportPath, status.Recommendation)
+				_, _ = fmt.Fprintf(w, "%s:%d:%d: uses alias %q to import package %s. %s.\n", file, alias.Pos.Line, alias.Pos.Column, alias.Alias, alias.ImportPath, status.Recommendation)
 			}
 		}
 	}
