@@ -24,10 +24,9 @@ import (
 
 	"github.com/nmiyake/pkg/dirs"
 	"github.com/nmiyake/pkg/gofiles"
+	"github.com/palantir/go-importalias/importalias"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-
-	"github.com/palantir/go-importalias/importalias"
 )
 
 func TestImportAliasNoError(t *testing.T) {

@@ -15,10 +15,9 @@
 package cmd
 
 import (
+	"github.com/palantir/go-importalias/importalias"
 	"github.com/palantir/pkg/cobracli"
 	"github.com/spf13/cobra"
-
-	"github.com/palantir/go-importalias/importalias"
 )
 
 var (
