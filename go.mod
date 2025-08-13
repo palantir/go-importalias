@@ -3,7 +3,7 @@ module github.com/palantir/go-importalias
 go 1.24.0
 
 require (
-	github.com/nmiyake/pkg/dirs v1.0.2
+	github.com/nmiyake/pkg/dirs v1.1.0
 	github.com/nmiyake/pkg/gofiles v1.2.0
 	github.com/palantir/pkg/cobracli v1.2.0
 	github.com/pkg/errors v0.9.1
@@ -14,7 +14,6 @@ require (
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/nmiyake/pkg v1.0.0 // indirect
 	github.com/nmiyake/pkg/errorstringer v1.1.0 // indirect
 	github.com/palantir/pkg v1.1.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
