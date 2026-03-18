@@ -19,7 +19,7 @@ import (
 	"go/ast"
 	"go/parser"
 	"go/token"
-	"io/ioutil"
+	"os"
 	"sort"
 	"strings"
 )
@@ -71,7 +71,7 @@ func NewProjectImportInfo() ProjectImportInfo {
 }
 
 func (p *projectImportAliasInfo) AddImportAliasesFromFile(filename string) error {
-	src, err := ioutil.ReadFile(filename)
+	src, err := os.ReadFile(filename)
 	if err != nil {
 		return err
 	}

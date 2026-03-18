@@ -17,7 +17,7 @@ package importalias_test
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"path"
 	"strings"
 	"testing"
@@ -149,7 +149,7 @@ func TestImportAliasNoError(t *testing.T) {
 			},
 		},
 	} {
-		projectDir, err := ioutil.TempDir(tmpDir, "")
+		projectDir, err := os.MkdirTemp(tmpDir, "")
 		require.NoError(t, err)
 
 		_, err = gofiles.Write(projectDir, tc.files)
@@ -352,7 +352,7 @@ func TestImportAliasError(t *testing.T) {
 			},
 		},
 	} {
-		projectDir, err := ioutil.TempDir(tmpDir, "")
+		projectDir, err := os.MkdirTemp(tmpDir, "")
 		require.NoError(t, err)
 
 		files, err := gofiles.Write(projectDir, tc.files)
